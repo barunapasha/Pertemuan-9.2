@@ -26,7 +26,7 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Email atau Password yang anda masukan salah.',
         ]);
     }
 
@@ -35,6 +35,6 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('login'); // Mengubah ini dari redirect('/') ke redirect()->route('login')
+        return redirect()->route('login'); 
     }
 }

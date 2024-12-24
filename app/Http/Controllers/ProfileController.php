@@ -20,7 +20,6 @@ class ProfileController extends Controller
             'email' => 'required|string|email|max:255|unique:users,email,' . Auth::id(),
         ]);
 
-        // Update menggunakan DB Query Builder
         DB::table('users')
             ->where('id', Auth::id())
             ->update([
